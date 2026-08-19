@@ -1,0 +1,117 @@
+/* Tiến Lên: Deal In — support site.
+   One stylesheet, no framework, no JavaScript, no web fonts. The page has to
+   load and be readable on whatever a reviewer or a player opens it with, and
+   every dependency is one more thing that can fail in front of them.
+
+   Colours are the game's own: the boot splash's deep red, the gold the menu
+   is lettered in, and the pink of a lotus petal. */
+
+:root {
+  --bg: #230706;
+  --panel: #351110;
+  --edge: #5c231d;
+  --gold: #ffdb73;
+  --petal: #f0308c;
+  --text: #f3e7e3;
+  --muted: #c3a9a4;
+  --max: 46rem;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  padding: 0 1.25rem 4rem;
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Helvetica, Arial, sans-serif;
+  font-size: 1.0625rem;
+  line-height: 1.65;
+}
+
+/* Everything shares one measure, so the page reads as a column rather than as
+   a set of boxes that happen to be stacked. */
+header, main, footer { max-width: var(--max); margin: 0 auto; }
+
+.top {
+  text-align: center;
+  padding: 3rem 0 1.5rem;
+}
+
+h1 {
+  margin: 0;
+  font-size: clamp(1.9rem, 6vw, 2.6rem);
+  line-height: 1.15;
+  color: var(--gold);
+  letter-spacing: 0.01em;
+}
+
+.tagline {
+  margin: 0.4rem 0 0;
+  color: var(--muted);
+  font-size: 1.05rem;
+}
+
+.card {
+  background: var(--panel);
+  border: 1px solid var(--edge);
+  border-radius: 14px;
+  padding: 1.5rem 1.5rem 1.75rem;
+  margin: 1.25rem 0;
+}
+
+/* The contact card is the one thing on this page that must not be missed, so
+   it is the only element with the petal colour on its edge. */
+.contact { border-color: var(--petal); }
+
+h2 {
+  margin: 0 0 0.75rem;
+  font-size: 1.35rem;
+  color: var(--gold);
+}
+
+h3 {
+  margin: 1.5rem 0 0.35rem;
+  font-size: 1.08rem;
+  color: var(--text);
+}
+
+h3:first-of-type { margin-top: 0.5rem; }
+
+p { margin: 0 0 0.9rem; }
+p:last-child { margin-bottom: 0; }
+
+ul { margin: 0.5rem 0 0; padding-left: 1.25rem; }
+li { margin-bottom: 0.45rem; }
+
+.email {
+  margin: 1.1rem 0;
+  font-size: clamp(1.15rem, 4.5vw, 1.5rem);
+  font-weight: 600;
+  word-break: break-word;
+}
+
+.note { color: var(--muted); font-size: 0.97rem; }
+
+a { color: var(--petal); }
+a:hover, a:focus { color: var(--gold); }
+
+/* A visible focus ring, because this page is one people arrive at needing
+   something and some of them will be using a keyboard to get it. */
+a:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 3px;
+  border-radius: 3px;
+}
+
+footer {
+  margin-top: 2.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--edge);
+  text-align: center;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+footer p { margin: 0 0 0.35rem; }
